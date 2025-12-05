@@ -26,10 +26,12 @@ export default function MyTeamTab() {
     if (!myTeam) return;
 
     // 객체 복사 후 멤버 추가
-    const newTeam = { ...myTeam };
-    if (!newTeam.members) newTeam.members = []; // 안전장치
+   const newMember = { name: `친구${(myTeam.members?.length || 0) + 1}`, status: 'READY' };
     
-    newTeam.members.push({ name: '친구(입장함)', status: 'READY' });
+    const newTeam = { 
+      ...myTeam, 
+      members: [...(myTeam.members || []), newMember] // 기존 멤버 복사 + 새 멤버 추가
+    };
     
     // Store와 State 모두 업데이트
     myTeamState.currentTeam = newTeam; 

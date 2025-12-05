@@ -73,7 +73,7 @@ export default function Write() {
         </View>
 
         {/* 평균 나이 */}
-        <Text style={styles.label}>팀원 평균 나이는?</Text>
+     <Text style={styles.label}>내 나이는?</Text> 
         <TextInput
           style={styles.input}
           placeholder="예: 23"
@@ -83,7 +83,6 @@ export default function Write() {
           onChangeText={setAge}
           maxLength={2}
         />
-
         {/* 제목 */}
         <Text style={styles.label}>제목 (임팩트 있게!)</Text>
         <TextInput
